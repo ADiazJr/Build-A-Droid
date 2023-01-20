@@ -25,6 +25,15 @@ public class Droid {
       System.out.println(name + " is performing task: " + task);
       batteryLevel -= 10;
     }
+
+    public void performHeavyTask(String task) {
+        System.out.println(name + " is performing a heavy task!: " + task);
+        System.out.println("It loses 60% battery because of it");
+        batteryLevel -= 60;
+        if(batteryLevel < 50) {
+            System.out.println("WARNING! " + name + " is under 50% battery!");
+          } 
+    }
   
     public static void main(String[] args) {
       Droid codey = new Droid("Codey");
@@ -33,6 +42,9 @@ public class Droid {
       codey.energyReport();
       Droid nodey = new Droid("nodey");
       codey.energyTransfer(10, nodey);
+      codey.performHeavyTask("Build me a new Resume");
+      
+ 
     }
   
   }
